@@ -101,5 +101,29 @@ Có những chuyến đi không cần lịch trình. Sáng sớm, sương còn g
 Đôi khi du lịch không phải để check-in, mà để chậm lại một nhịp mình đã quên mất.
     `
   }
+{
+    title: "Mindfulness Leadership – Lãnh đạo bắt đầu từ chính mình",
+    category: "works",
+    date: "2026-07-02",
+    cover: "",
+    content: `
+Trong công việc, nhiều người cho rằng lãnh đạo là người giỏi nhất, quyết đoán nhất hay có quyền lực lớn nhất.
 
+Nhưng theo tôi, lãnh đạo thực sự bắt đầu từ khả năng lãnh đạo chính mình.
+
+Mindfulness Leadership (Lãnh đạo tỉnh thức) là khả năng nhận thức rõ suy nghĩ, cảm xúc và hành động của bản thân để đưa ra quyết định có chủ đích, thay vì phản ứng theo cảm xúc hay áp lực.
+
+Người lãnh đạo tỉnh thức không tạo ra sự phục tùng bằng quyền lực, mà tạo ra sự cam kết bằng niềm tin, sự tôn trọng và tính chính trực.
+
+Họ biết lắng nghe trước khi phán xét, bình tĩnh trước áp lực và tập trung giải quyết vấn đề thay vì tìm người để đổ lỗi.
+
+Qua trải nghiệm, tôi nhận ra một điều đơn giản nhưng rất quan trọng:
+
+Chúng ta không thể thay đổi người khác hay hoàn cảnh, nhưng luôn có thể thay đổi cách mình phản ứng và cách mình lãnh đạo.
+
+Trong thời đại AI, kiến thức và kỹ năng sẽ ngày càng dễ được hỗ trợ bởi công nghệ. Điều tạo nên giá trị khác biệt của một nhà lãnh đạo sẽ là những phẩm chất rất "con người": sự tỉnh thức, lòng chính trực, khả năng đồng cảm và truyền cảm hứng.
+
+Lãnh đạo không bắt đầu từ việc thay đổi người khác. Lãnh đạo bắt đầu từ việc thay đổi chính mình.
+    `
+  }
 ];
