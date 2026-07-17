@@ -34,7 +34,7 @@ const SITE = {
   name: "Jo Nguyen",
   tagline: "một góc nhỏ trên internet — nghĩ gì viết nấy",
   author: "Joklc",
-  aboutPhoto: "jo.jpg",
+  aboutPhoto: "jo.png",
 
   // Menu chủ đề trên thanh điều hướng — tên phải TRÙNG với category của bài
   menu: ["công việc", "du lịch", "suy nghĩ", "cuộc sống"],
