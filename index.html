@@ -6,278 +6,563 @@
 <title>Ghi Chép Rời</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#F2F0E8;
-    --paper:#FBFAF6;
-    --ink:#1E201B;
-    --muted:#726E62;
-    --faint:#9B9686;
-    --line:#DCD8C9;
-    --accent:#33544A;
-    --accent-2:#8C5E2D;
-    --radius:3px;
+    --bg:#F6F6F3;
+    --card:#FFFFFF;
+    --ink:#17181C;
+    --muted:#61646E;
+    --faint:#9B9EA8;
+    --line:#E3E3DE;
+    --accent:#2F52E0;
+    --accent-ink:#1B3AB8;
+    --radius:14px;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
   body{
     background:var(--bg);
     color:var(--ink);
-    font-family:'Inter',sans-serif;
-    line-height:1.65;
+    font-family:'Be Vietnam Pro',sans-serif;
+    line-height:1.7;
     -webkit-font-smoothing:antialiased;
   }
-  .wrap{
-    max-width:660px;
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+
+  /* ===== NAV ===== */
+  nav{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(246,246,243,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1060px;
     margin:0 auto;
-    padding:64px 24px 120px;
+    padding:0 24px;
+    height:64px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
   }
-  header.site{margin-bottom:56px;}
-  h1.title{
-    font-family:'Fraunces',serif;
-    font-weight:500;
-    font-size:34px;
-    letter-spacing:-0.01em;
+  .logo{
+    font-family:'Archivo',sans-serif;
+    font-weight:800;
+    font-size:19px;
+    letter-spacing:-0.02em;
+    cursor:pointer;
+    white-space:nowrap;
   }
-  h1.title a{color:inherit;text-decoration:none;}
-  .tagline{
+  .logo span{color:var(--accent);}
+  .nav-links{
+    display:flex;
+    gap:4px;
+  }
+  .nav-links a{
+    font-family:'Archivo',sans-serif;
+    font-weight:600;
+    font-size:14px;
+    padding:8px 14px;
+    border-radius:8px;
+    color:var(--muted);
+    cursor:pointer;
+    transition:color .15s, background .15s;
+  }
+  .nav-links a:hover{color:var(--ink);background:#EDEDE8;}
+  .nav-links a.active{color:var(--accent);}
+
+  /* ===== LAYOUT ===== */
+  .container{
+    max-width:1060px;
+    margin:0 auto;
+    padding:48px 24px 100px;
+  }
+  .view{display:none;}
+  .view.show{display:block;}
+
+  .section-label{
     font-family:'IBM Plex Mono',monospace;
     font-size:12px;
-    color:var(--muted);
-    margin-top:6px;
-    letter-spacing:0.02em;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--faint);
+    margin-bottom:18px;
   }
+
+  /* ===== HERO / FEATURED ===== */
+  .featured{
+    display:grid;
+    grid-template-columns:1.15fr 1fr;
+    gap:0;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+    cursor:pointer;
+    margin-bottom:56px;
+    transition:border-color .2s;
+  }
+  .featured:hover{border-color:var(--accent);}
+  .featured .cover{
+    min-height:320px;
+    background-size:cover;
+    background-position:center;
+  }
+  .featured .body{
+    padding:40px 40px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .badge{
+    display:inline-block;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--accent-ink);
+    background:#E7ECFC;
+    padding:4px 10px;
+    border-radius:20px;
+    margin-bottom:14px;
+    width:fit-content;
+  }
+  .featured h2{
+    font-family:'Archivo',sans-serif;
+    font-weight:800;
+    font-size:32px;
+    line-height:1.2;
+    letter-spacing:-0.02em;
+    margin-bottom:12px;
+  }
+  .featured:hover h2{color:var(--accent);}
+  .featured .excerpt{color:var(--muted);font-size:15px;}
+  .featured .meta{
+    margin-top:20px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    color:var(--faint);
+  }
+
+  /* ===== GRID ===== */
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+    gap:24px;
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    transition:border-color .2s, transform .2s;
+  }
+  .card:hover{border-color:var(--accent);transform:translateY(-3px);}
+  .card .cover{
+    height:180px;
+    background-size:cover;
+    background-position:center;
+  }
+  .card .cover.placeholder{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Archivo',sans-serif;
+    font-weight:800;
+    font-size:56px;
+    color:#FFFFFF;
+  }
+  .card .body{padding:20px 22px 24px;flex:1;display:flex;flex-direction:column;}
+  .card .cat{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--accent-ink);
+    margin-bottom:8px;
+  }
+  .card h3{
+    font-family:'Archivo',sans-serif;
+    font-weight:700;
+    font-size:19px;
+    line-height:1.3;
+    letter-spacing:-0.01em;
+    margin-bottom:8px;
+  }
+  .card:hover h3{color:var(--accent);}
+  .card .excerpt{
+    color:var(--muted);
+    font-size:14px;
+    flex:1;
+  }
+  .card .meta{
+    margin-top:14px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    color:var(--faint);
+  }
+
+  /* ===== FILTER PILLS ===== */
   .filters{
     display:flex;
     gap:8px;
     flex-wrap:wrap;
-    margin-top:28px;
+    margin-bottom:32px;
   }
   .pill{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:11px;
-    padding:5px 11px;
+    font-family:'Archivo',sans-serif;
+    font-weight:600;
+    font-size:13px;
+    padding:7px 16px;
     border-radius:20px;
     border:1px solid var(--line);
+    background:var(--card);
     color:var(--muted);
     cursor:pointer;
-    background:transparent;
-    letter-spacing:0.02em;
+    transition:all .15s;
   }
+  .pill:hover{border-color:var(--accent);color:var(--accent);}
   .pill.active{
-    background:var(--accent-2);
-    border-color:var(--accent-2);
-    color:#FBF3E9;
+    background:var(--accent);
+    border-color:var(--accent);
+    color:#FFFFFF;
   }
 
-  .spine{
-    position:relative;
-    padding-left:26px;
-    margin-top:44px;
-  }
-  .spine::before{
-    content:"";
-    position:absolute;
-    left:5px;
-    top:6px;
-    bottom:6px;
-    width:1px;
-    background:var(--line);
-  }
-  .entry{
-    position:relative;
-    padding:0 0 34px;
-    cursor:pointer;
-  }
-  .entry::before{
-    content:"";
-    position:absolute;
-    left:-25px;
-    top:7px;
-    width:9px;
-    height:9px;
-    border-radius:50%;
-    background:var(--paper);
-    border:1.5px solid var(--accent);
-  }
-  .entry-meta{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:11px;
-    color:var(--faint);
-    display:flex;
-    gap:10px;
-    align-items:center;
-    margin-bottom:6px;
-  }
-  .entry-meta .cat{color:var(--accent-2);}
-  .entry h2{
-    font-family:'Fraunces',serif;
-    font-weight:500;
-    font-style:italic;
-    font-size:23px;
-    margin-bottom:6px;
-    line-height:1.3;
-  }
-  .entry p.excerpt{
+  /* ===== POST DETAIL ===== */
+  .post-detail{max-width:720px;margin:0 auto;}
+  .back{
+    font-family:'Archivo',sans-serif;
+    font-weight:600;
+    font-size:14px;
     color:var(--muted);
-    font-size:14.5px;
-    max-width:56ch;
+    cursor:pointer;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    margin-bottom:32px;
   }
-  .entry:hover h2{color:var(--accent);}
+  .back:hover{color:var(--accent);}
+  .post-detail .badge{margin-bottom:16px;}
+  .post-detail h1{
+    font-family:'Archivo',sans-serif;
+    font-weight:800;
+    font-size:40px;
+    line-height:1.15;
+    letter-spacing:-0.025em;
+    margin-bottom:14px;
+  }
+  .post-detail .meta{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    color:var(--faint);
+    margin-bottom:32px;
+  }
+  .post-cover{
+    border-radius:var(--radius);
+    margin-bottom:36px;
+    max-height:440px;
+    width:100%;
+    object-fit:cover;
+  }
+  .post-body{font-size:17px;}
+  .post-body p{margin-bottom:22px;}
+  .post-body figure{margin:32px 0;}
+  .post-body figure img{border-radius:12px;width:100%;}
+  .post-body figcaption{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    color:var(--faint);
+    text-align:center;
+    margin-top:10px;
+  }
+
+  /* ===== ABOUT ===== */
+  .about-wrap{max-width:640px;margin:0 auto;}
+  .about-wrap h1{
+    font-family:'Archivo',sans-serif;
+    font-weight:800;
+    font-size:36px;
+    letter-spacing:-0.02em;
+    margin-bottom:24px;
+  }
+  .about-wrap p{margin-bottom:20px;font-size:16.5px;color:#2B2D33;}
 
   .empty{
-    padding:60px 0;
+    padding:80px 0;
     text-align:center;
-    color:var(--muted);
+    color:var(--faint);
     font-family:'IBM Plex Mono',monospace;
     font-size:13px;
   }
 
-  .post-view{display:none;}
-  .post-view .back{
+  footer{
+    border-top:1px solid var(--line);
+    padding:28px 24px;
+  }
+  .footer-inner{
+    max-width:1060px;
+    margin:0 auto;
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    flex-wrap:wrap;
     font-family:'IBM Plex Mono',monospace;
     font-size:12px;
-    color:var(--muted);
-    cursor:pointer;
-    display:inline-block;
-    margin-bottom:32px;
-  }
-  .post-view .back:hover{color:var(--accent);}
-  .post-view .entry-meta{margin-bottom:14px;}
-  .post-view h1.post-title{
-    font-family:'Fraunces',serif;
-    font-weight:500;
-    font-style:italic;
-    font-size:36px;
-    line-height:1.22;
-    margin-bottom:28px;
-  }
-  .post-body{
-    font-size:16.5px;
-    color:#2A2C25;
-  }
-  .post-body p{margin-bottom:20px;}
-
-  footer.site{
-    margin-top:80px;
-    padding-top:20px;
-    border-top:1px solid var(--line);
-    font-family:'IBM Plex Mono',monospace;
-    font-size:11px;
     color:var(--faint);
   }
 
-  @media(max-width:520px){
-    .wrap{padding:40px 18px 90px;}
-    h1.title{font-size:28px;}
-    .post-view h1.post-title{font-size:28px;}
+  @media(max-width:760px){
+    .featured{grid-template-columns:1fr;}
+    .featured .cover{min-height:220px;}
+    .featured .body{padding:28px 24px;}
+    .featured h2{font-size:25px;}
+    .post-detail h1{font-size:29px;}
+    .nav-links a{padding:8px 9px;font-size:13px;}
+    .container{padding:32px 18px 80px;}
   }
 </style>
 </head>
 <body>
 
-<div class="wrap">
+<nav>
+  <div class="nav-inner">
+    <div class="logo" onclick="go('home')" id="siteLogo"></div>
+    <div class="nav-links">
+      <a id="nav-home" onclick="go('home')">Trang chủ</a>
+      <a id="nav-posts" onclick="go('posts')">Bài viết</a>
+      <a id="nav-about" onclick="go('about')">Về mình</a>
+    </div>
+  </div>
+</nav>
 
-  <header class="site">
-    <h1 class="title"><a href="#" onclick="showList();return false;">Ghi Chép Rời</a></h1>
-    <div class="tagline">một góc nhỏ trên internet — nghĩ gì viết nấy</div>
-    <div class="filters" id="filters"></div>
-  </header>
+<div class="container">
 
-  <main class="spine" id="listView"></main>
-
-  <section class="post-view" id="postView">
-    <span class="back" onclick="showList()">&larr; quay lại</span>
-    <div class="entry-meta" id="postMeta"></div>
-    <h1 class="post-title" id="postTitle"></h1>
-    <div class="post-body" id="postBody"></div>
+  <!-- TRANG CHỦ -->
+  <section class="view" id="view-home">
+    <div id="featuredSlot"></div>
+    <div class="section-label">Bài viết gần đây</div>
+    <div class="grid" id="homeGrid"></div>
   </section>
 
-  <footer class="site" id="footerText"></footer>
+  <!-- TẤT CẢ BÀI VIẾT -->
+  <section class="view" id="view-posts">
+    <div class="section-label">Tất cả bài viết</div>
+    <div class="filters" id="filters"></div>
+    <div class="grid" id="postsGrid"></div>
+  </section>
+
+  <!-- CHI TIẾT BÀI -->
+  <section class="view" id="view-post">
+    <div class="post-detail">
+      <span class="back" onclick="history.back()">&larr; Quay lại</span>
+      <div id="postBadge"></div>
+      <h1 id="postTitle"></h1>
+      <div class="meta" id="postMeta"></div>
+      <img class="post-cover" id="postCover" style="display:none" alt="">
+      <div class="post-body" id="postBody"></div>
+    </div>
+  </section>
+
+  <!-- VỀ MÌNH -->
+  <section class="view" id="view-about">
+    <div class="about-wrap">
+      <h1>Về mình</h1>
+      <div id="aboutBody"></div>
+    </div>
+  </section>
 
 </div>
 
+<footer>
+  <div class="footer-inner">
+    <span id="footerLeft"></span>
+    <span>viết bằng tay, đăng bằng git push</span>
+  </div>
+</footer>
+
 <script src="posts.js"></script>
 <script>
+const PALETTE = ['#2F52E0','#0E8A6C','#B4560F','#8A3FB3','#B33355','#3B7A1E'];
 let activeFilter = 'Tất cả';
 
-function fmtDate(d){
-  const dt = new Date(d + 'T00:00:00');
-  const months = ['th1','th2','th3','th4','th5','th6','th7','th8','th9','th10','th11','th12'];
-  return dt.getDate()+' '+months[dt.getMonth()]+' '+dt.getFullYear();
-}
+document.getElementById('siteLogo').innerHTML =
+  escapeHtml(SITE.name).replace(/ /, ' <span>') + '</span>';
+document.getElementById('footerLeft').textContent =
+  '© ' + new Date().getFullYear() + ' ' + SITE.author;
+document.title = SITE.name;
 
 function escapeHtml(s){
   const d = document.createElement('div');
   d.textContent = s;
   return d.innerHTML;
 }
-
-function cleanContent(raw){
-  return raw.trim();
+function fmtDate(d){
+  const dt = new Date(d + 'T00:00:00');
+  return dt.getDate() + ' tháng ' + (dt.getMonth()+1) + ', ' + dt.getFullYear();
+}
+function catColor(cat){
+  let h = 0;
+  for(const ch of (cat||'x')) h = (h*31 + ch.charCodeAt(0)) % PALETTE.length;
+  return PALETTE[h];
+}
+function sortedPosts(){
+  return [...POSTS].sort((a,b)=> new Date(b.date) - new Date(a.date));
+}
+function excerptOf(p){
+  const clean = p.content.trim();
+  const line = clean.split('\n').find(l=>l.trim().length>0 && !l.trim().startsWith('[anh:')) || '';
+  return line.length>130 ? line.slice(0,130)+'…' : line;
+}
+function coverHtml(p, cls){
+  if(p.cover && p.cover.trim()){
+    return `<div class="cover ${cls}" style="background-image:url('${p.cover}')"></div>`;
+  }
+  const c = catColor(p.category);
+  const letter = (p.title||'?').trim().charAt(0).toUpperCase();
+  return `<div class="cover ${cls} placeholder" style="background:${c}">${escapeHtml(letter)}</div>`;
 }
 
-function renderFilters(){
-  const cats = ['Tất cả', ...new Set(POSTS.map(p=>p.category).filter(Boolean))];
-  const el = document.getElementById('filters');
-  el.innerHTML = '';
-  cats.forEach(c=>{
-    const btn = document.createElement('button');
-    btn.className = 'pill' + (c===activeFilter ? ' active' : '');
-    btn.textContent = c;
-    btn.onclick = ()=>{ activeFilter = c; renderFilters(); renderList(); };
-    el.appendChild(btn);
-  });
-}
-
-function renderList(){
-  const el = document.getElementById('listView');
-  const sorted = [...POSTS].sort((a,b)=> new Date(b.date) - new Date(a.date));
-  const filtered = activeFilter==='Tất cả' ? sorted : sorted.filter(p=>p.category===activeFilter);
-  if(filtered.length===0){
-    el.innerHTML = '<div class="empty">Chưa có bài viết nào ở chủ đề này.</div>';
+/* ===== RENDER ===== */
+function renderHome(){
+  const posts = sortedPosts();
+  const slot = document.getElementById('featuredSlot');
+  const grid = document.getElementById('homeGrid');
+  if(posts.length === 0){
+    slot.innerHTML = '';
+    grid.innerHTML = '<div class="empty">Chưa có bài viết nào.</div>';
     return;
   }
-  el.innerHTML = '';
-  filtered.forEach((p, i)=>{
-    const div = document.createElement('div');
-    div.className = 'entry';
-    div.onclick = ()=> openPost(p);
-    const clean = cleanContent(p.content);
-    const excerpt = clean.split('\n').find(l=>l.trim().length>0) || '';
-    div.innerHTML = `
-      <div class="entry-meta"><span>${fmtDate(p.date)}</span><span class="cat">${escapeHtml(p.category||'chưa phân loại')}</span></div>
-      <h2>${escapeHtml(p.title)}</h2>
-      <p class="excerpt">${escapeHtml(excerpt.slice(0,120))}${excerpt.length>120?'…':''}</p>
-    `;
-    el.appendChild(div);
-  });
+  const f = posts[0];
+  slot.innerHTML = `
+    <div class="section-label">Mới nhất</div>
+    <article class="featured" onclick="openPost(${POSTS.indexOf(f)})">
+      ${coverHtml(f,'')}
+      <div class="body">
+        <span class="badge">${escapeHtml(f.category||'chưa phân loại')}</span>
+        <h2>${escapeHtml(f.title)}</h2>
+        <p class="excerpt">${escapeHtml(excerptOf(f))}</p>
+        <div class="meta">${fmtDate(f.date)}</div>
+      </div>
+    </article>`;
+  grid.innerHTML = '';
+  posts.slice(1, 7).forEach(p => grid.appendChild(cardEl(p)));
+  if(posts.length === 1){
+    grid.innerHTML = '<div class="empty">Các bài tiếp theo sẽ hiện ở đây.</div>';
+  }
 }
 
-function openPost(p){
-  document.getElementById('postMeta').innerHTML =
-    `<span>${fmtDate(p.date)}</span><span class="cat">${escapeHtml(p.category||'chưa phân loại')}</span>`;
+function cardEl(p){
+  const div = document.createElement('article');
+  div.className = 'card';
+  div.onclick = ()=> openPost(POSTS.indexOf(p));
+  div.innerHTML = `
+    ${coverHtml(p,'')}
+    <div class="body">
+      <div class="cat">${escapeHtml(p.category||'chưa phân loại')}</div>
+      <h3>${escapeHtml(p.title)}</h3>
+      <p class="excerpt">${escapeHtml(excerptOf(p))}</p>
+      <div class="meta">${fmtDate(p.date)}</div>
+    </div>`;
+  return div;
+}
+
+function renderPostsPage(){
+  const cats = ['Tất cả', ...new Set(POSTS.map(p=>p.category).filter(Boolean))];
+  const fEl = document.getElementById('filters');
+  fEl.innerHTML = '';
+  cats.forEach(c=>{
+    const b = document.createElement('button');
+    b.className = 'pill' + (c===activeFilter?' active':'');
+    b.textContent = c;
+    b.onclick = ()=>{ activeFilter=c; renderPostsPage(); };
+    fEl.appendChild(b);
+  });
+  const grid = document.getElementById('postsGrid');
+  grid.innerHTML = '';
+  const list = sortedPosts().filter(p => activeFilter==='Tất cả' || p.category===activeFilter);
+  if(list.length===0){
+    grid.innerHTML = '<div class="empty">Chưa có bài nào ở chủ đề này.</div>';
+    return;
+  }
+  list.forEach(p => grid.appendChild(cardEl(p)));
+}
+
+function renderPost(i){
+  const p = POSTS[i];
+  if(!p){ go('home'); return; }
+  document.getElementById('postBadge').innerHTML =
+    `<span class="badge">${escapeHtml(p.category||'chưa phân loại')}</span>`;
   document.getElementById('postTitle').textContent = p.title;
-  const clean = cleanContent(p.content);
-  document.getElementById('postBody').innerHTML =
-    clean.split(/\n\s*\n+/).map(para=>`<p>${escapeHtml(para.trim()).replace(/\n/g,'<br>')}</p>`).join('');
-  document.getElementById('listView').style.display = 'none';
-  document.getElementById('filters').style.display = 'none';
-  document.getElementById('postView').style.display = 'block';
+  document.getElementById('postMeta').textContent = fmtDate(p.date) + ' · ' + SITE.author;
+  const coverEl = document.getElementById('postCover');
+  if(p.cover && p.cover.trim()){
+    coverEl.src = p.cover;
+    coverEl.style.display = 'block';
+  } else {
+    coverEl.style.display = 'none';
+  }
+  const paras = p.content.trim().split(/\n\s*\n+/);
+  document.getElementById('postBody').innerHTML = paras.map(para=>{
+    const t = para.trim();
+    const m = t.match(/^\[anh:\s*([^\]|]+?)\s*(?:\|\s*([^\]]*))?\]$/);
+    if(m){
+      const src = m[1].includes('/') ? m[1] : 'images/' + m[1];
+      const cap = m[2] ? `<figcaption>${escapeHtml(m[2].trim())}</figcaption>` : '';
+      return `<figure><img src="${src}" alt="${escapeHtml(m[2]||p.title)}">${cap}</figure>`;
+    }
+    return `<p>${escapeHtml(t).replace(/\n/g,'<br>')}</p>`;
+  }).join('');
+}
+
+function renderAbout(){
+  const paras = SITE.about.trim().split(/\n\s*\n+/);
+  document.getElementById('aboutBody').innerHTML =
+    paras.map(t=>`<p>${escapeHtml(t.trim()).replace(/\n/g,'<br>')}</p>`).join('');
+}
+
+/* ===== ROUTING (hash) ===== */
+function go(route){ location.hash = '#/' + route; }
+function openPost(i){ location.hash = '#/post/' + i; }
+
+function route(){
+  const h = location.hash.replace(/^#\/?/, '');
+  const [page, arg] = h.split('/');
+  const views = ['home','posts','post','about'];
+  views.forEach(v=>{
+    document.getElementById('view-'+v).classList.toggle('show', false);
+  });
+  ['home','posts','about'].forEach(v=>{
+    document.getElementById('nav-'+v).classList.toggle('active', false);
+  });
+  if(page === 'posts'){
+    renderPostsPage();
+    document.getElementById('view-posts').classList.add('show');
+    document.getElementById('nav-posts').classList.add('active');
+  } else if(page === 'post' && arg !== undefined){
+    renderPost(parseInt(arg,10));
+    document.getElementById('view-post').classList.add('show');
+  } else if(page === 'about'){
+    renderAbout();
+    document.getElementById('view-about').classList.add('show');
+    document.getElementById('nav-about').classList.add('active');
+  } else {
+    renderHome();
+    document.getElementById('view-home').classList.add('show');
+    document.getElementById('nav-home').classList.add('active');
+  }
   window.scrollTo(0,0);
 }
 
-function showList(){
-  document.getElementById('listView').style.display = 'block';
-  document.getElementById('filters').style.display = 'flex';
-  document.getElementById('postView').style.display = 'none';
-}
-
-document.getElementById('footerText').textContent =
-  '© ' + new Date().getFullYear() + ' — viết bằng tay, đăng bằng git push';
-
-renderFilters();
-renderList();
+window.addEventListener('hashchange', route);
+route();
 </script>
 
 </body>
