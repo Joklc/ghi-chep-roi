@@ -292,6 +292,16 @@
 
   /* ===== ABOUT ===== */
   .about-wrap{max-width:640px;margin:0 auto;}
+  .about-photo{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+    margin:0 auto 28px;
+    border:4px solid var(--card);
+    box-shadow:0 0 0 1px var(--line);
+  }
   .about-wrap h1{
     font-family:'Archivo',sans-serif;
     font-weight:800;
@@ -381,7 +391,8 @@
   <!-- VỀ MÌNH -->
   <section class="view" id="view-about">
     <div class="about-wrap">
-      <h1>Về mình</h1>
+      <div id="aboutPhotoSlot"></div>
+      <h1 style="text-align:center">Về mình</h1>
       <div id="aboutBody"></div>
     </div>
   </section>
@@ -541,6 +552,12 @@ function renderPost(i){
 }
 
 function renderAbout(){
+  const slot = document.getElementById('aboutPhotoSlot');
+  if(typeof SITE.aboutPhoto === 'string' && SITE.aboutPhoto.trim()){
+    slot.innerHTML = `<img class="about-photo" src="${SITE.aboutPhoto.trim()}" alt="${escapeHtml(SITE.author||'')}">`;
+  } else {
+    slot.innerHTML = '';
+  }
   const paras = SITE.about.trim().split(/\n\s*\n+/);
   document.getElementById('aboutBody').innerHTML =
     paras.map(t=>`<p>${escapeHtml(t.trim()).replace(/\n/g,'<br>')}</p>`).join('');
