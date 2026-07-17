@@ -34,7 +34,7 @@ const SITE = {
   name: "Ghi Chép Rời",
   tagline: "một góc nhỏ trên internet — nghĩ gì viết nấy",
   author: "Joklc",
-  about: `
+  about: `menu: ["công việc", "du lịch", "suy nghĩ"],
 Xin chào, mình là Joklc.
 
 Đây là nơi mình lưu lại những điều vụn vặt: một chuyến đi, một công cụ mới học được, hay chỉ là một ý nghĩ giữa tuần. Không có chủ đề cố định — nghĩ gì viết nấy.
@@ -80,3 +80,4 @@ Có những chuyến đi không cần lịch trình. Sáng sớm, sương còn g
   }
 
 ];
+
