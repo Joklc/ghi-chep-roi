@@ -34,7 +34,11 @@ const SITE = {
   name: "Jo Nguyen",
   tagline: "một góc nhỏ trên internet — nghĩ gì viết nấy",
   author: "Joklc",
-  about: `menu: ["công việc", "du lịch", "suy nghĩ", "cuộc sống"],
+
+  // Menu chủ đề trên thanh điều hướng — tên phải TRÙNG với category của bài
+  menu: ["công việc", "du lịch", "suy nghĩ", "cuộc sống"],
+
+  about: `
 Xin chào, mình là Joklc.
 
 Đây là nơi mình lưu lại những điều vụn vặt: một chuyến đi, một công cụ mới học được, hay chỉ là một ý nghĩ giữa tuần. Không có chủ đề cố định — nghĩ gì viết nấy.
@@ -44,6 +48,18 @@ Ngoài viết lách, mình làm việc với dữ liệu, Data, Excel và các h
 };
 
 const POSTS = [
+
+  {
+    title: "What is work-life balance",
+    category: "suy nghĩ",
+    date: "2026-07-17",
+    cover: "",
+    content: `
+Như thế nào mới là định nghĩa đúng về "Work life balance" mà mọi người hay nói. Theo mình, sẽ không có 1 định nghĩa chung cho tất cả mà sẽ là
+
+Work is life and Life is work
+    `
+  },
 
   {
     title: "Một ý nghĩ giữa tuần",
@@ -78,14 +94,5 @@ Có những chuyến đi không cần lịch trình. Sáng sớm, sương còn g
 Đôi khi du lịch không phải để check-in, mà để chậm lại một nhịp mình đã quên mất.
     `
   }
-{
-    title: "What is work-life balance",
-    category: "suy nghĩ",
-    date: "2026-07-17",
-    cover: "",
-    content: `
-Như thế nào mới là định nghĩa đúng về "Work life balance" mà mọi người hay nói. Theo mình, sẽ không có 1 định nghĩa chung cho tất cả mà sẽ là
-Work is life and Life is work
 
 ];
-
