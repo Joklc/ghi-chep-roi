@@ -118,7 +118,9 @@
     min-height:320px;
     background-size:cover;
     background-position:center;
+    transition:transform .6s cubic-bezier(.2,.6,.2,1);
   }
+  .featured:hover .cover{transform:scale(1.05);}
   .featured .body{
     padding:40px 40px;
     display:flex;
@@ -176,7 +178,9 @@
     height:180px;
     background-size:cover;
     background-position:center;
+    transition:transform .55s cubic-bezier(.2,.6,.2,1);
   }
+  .card:hover .cover{transform:scale(1.07);}
   .card .cover.placeholder{
     display:flex;
     align-items:center;
@@ -334,6 +338,21 @@
     font-size:13px;
   }
 
+  /* ===== SCROLL REVEAL ===== */
+  .reveal{
+    opacity:0;
+    transform:translateY(22px);
+    transition:opacity .6s ease, transform .6s cubic-bezier(.2,.6,.2,1);
+  }
+  .reveal.in{
+    opacity:1;
+    transform:none;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    .card .cover, .featured .cover{transition:none;}
+  }
+
   footer{
     border-top:1px solid var(--line);
     padding:28px 24px;
@@ -425,6 +444,22 @@
 const PALETTE = ['#2F52E0','#0E8A6C','#B4560F','#8A3FB3','#B33355','#3B7A1E'];
 let activeFilter = 'All';
 
+/* Scroll reveal: phần tử hiện dần khi cuộn tới */
+const revealObserver = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      revealObserver.unobserve(e.target);
+    }
+  });
+},{threshold:0.08});
+
+function reveal(el, delay){
+  el.classList.add('reveal');
+  if(delay) el.style.transitionDelay = delay + 'ms';
+  revealObserver.observe(el);
+}
+
 document.getElementById('siteLogo').innerHTML =
   escapeHtml(SITE.name).replace(/ /, ' <span>') + '</span>';
 
@@ -497,7 +532,13 @@ function renderHome(){
       </div>
     </article>`;
   grid.innerHTML = '';
-  posts.slice(1, 7).forEach(p => grid.appendChild(cardEl(p)));
+  posts.slice(1, 7).forEach((p, idx) => {
+    const el = cardEl(p);
+    grid.appendChild(el);
+    reveal(el, idx * 90);
+  });
+  const featEl = slot.querySelector('.featured');
+  if(featEl) reveal(featEl, 0);
   if(posts.length === 1){
     grid.innerHTML = '<div class="empty">More posts will appear here.</div>';
   }
@@ -536,7 +577,11 @@ function renderPostsPage(){
     grid.innerHTML = '<div class="empty">No posts in this category yet.</div>';
     return;
   }
-  list.forEach(p => grid.appendChild(cardEl(p)));
+  list.forEach((p, idx) => {
+    const el = cardEl(p);
+    grid.appendChild(el);
+    reveal(el, Math.min(idx, 6) * 80);
+  });
 }
 
 function renderPost(i){
