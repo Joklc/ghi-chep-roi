@@ -149,7 +149,7 @@ Hôm nay là một website. Biết đâu ngày mai sẽ là một sản phẩm l
 
 Never stop learning.
     `
-  }
+  },
 {
     title: "Ly latte mỗi sáng",
     category: "life",
