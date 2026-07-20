@@ -150,5 +150,20 @@ Hôm nay là một website. Biết đâu ngày mai sẽ là một sản phẩm l
 Never stop learning.
     `
   }
+{
+    title: "Ly latte mỗi sáng",
+    category: "life",
+    date: "2026-02-20",
+    cover: "morning-latte.jpg",
+    content: `
+Mỗi sáng nhà mình bắt đầu bằng một nghi thức nhỏ: pha hai ly cafe latte từ chiếc máy pha cafe espresso cũ kỹ.
 
+Chiếc máy không xịn như ngoài tiệm. Nó là thành quả của những lần mày mò, vài lần rò nước, và không ít lần espresso chảy ra đắng nghét. Nhưng có lẽ vì thế mà ly cafe từ nó luôn có một vị riêng — vị của thứ mình tự tay làm ra.
+
+Chuột phụ trách đánh sữa, mèo phụ trách nén cafe. Lâu dần thành phân công bất thành văn, chẳng ai bảo ai. Tiếng máy chạy, mùi cafe lan cả phòng, và mười lăm phút không điện thoại, không deadline — chỉ có hai người với hai ly latte extra hot.
+
+Lớp bọt sữa hôm tròn hôm méo, hình trái tim hôm ra hôm không. Nhưng hoá ra điều đó chẳng quan trọng. Quan trọng là mỗi sáng đều có một khoảng lặng để bắt đầu ngày mới cùng nhau.
+
+    `
+  },
 ];
