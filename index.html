@@ -428,6 +428,10 @@
       <div id="aboutPhotoSlot"></div>
       <h1 style="text-align:center">About me</h1>
       <div id="aboutBody"></div>
+      <div style="margin-top:56px;border-top:1px solid var(--line);padding-top:32px">
+        <div class="section-label">Messages</div>
+        <div id="giscusSlot"></div>
+      </div>
     </div>
   </section>
 
@@ -630,6 +634,30 @@ function renderAbout(){
   const paras = SITE.about.trim().split(/\n\s*\n+/);
   document.getElementById('aboutBody').innerHTML =
     paras.map(t=>`<p>${escapeHtml(t.trim()).replace(/\n/g,'<br>')}</p>`).join('');
+
+  /* Giscus - khung lời nhắn (GitHub Discussions) */
+  const gslot = document.getElementById('giscusSlot');
+  gslot.innerHTML = '';
+  const gs = document.createElement('script');
+  gs.src = 'https://giscus.app/client.js';
+  const attrs = {
+    'data-repo': 'Joklc/Jo-Nguyen',
+    'data-repo-id': 'R_kgDOTbKgIw',
+    'data-category': 'General',
+    'data-category-id': 'DIC_kwDOTbKgI84DBjez',
+    'data-mapping': 'specific',
+    'data-term': 'about-me',
+    'data-strict': '0',
+    'data-reactions-enabled': '1',
+    'data-emit-metadata': '0',
+    'data-input-position': 'bottom',
+    'data-theme': 'light',
+    'data-lang': 'vi'
+  };
+  for(const k in attrs) gs.setAttribute(k, attrs[k]);
+  gs.crossOrigin = 'anonymous';
+  gs.async = true;
+  gslot.appendChild(gs);
 }
 
 /* ===== ROUTING (hash) ===== */
