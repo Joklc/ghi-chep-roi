@@ -239,4 +239,27 @@ Với mình, đó vừa là một áp lực, vừa là một cơ hội. Áp lự
 Tương lai ngành tài chính, mình đoán, sẽ không phải là "con người hay AI". Mà là con người biết dùng AI, và con người không biết dùng AI — và khoảng cách giữa hai nhóm đó sẽ ngày càng rõ.
     `
   },
+  {
+    title: "Về quê, đạp xe, và một ly nước mía",
+    category: "travel",
+    date: "2026-07-15",
+    cover: "countryside-bike.jpg",
+    content: `
+Cứ mỗi hai tuần, mình lại thu xếp một chuyến về quê. Không cần vé máy bay, không cần đặt phòng khách sạn. Chỉ cần một con đường làng, một chiếc xe đạp, và một buổi sáng không vướng bận gì.
+
+Mình thích về quê không phải vì có gì to tát để làm. Ngược lại, chính vì ở đó chẳng cần làm gì cả. Có buổi mình dậy thật sớm, đạp xe dọc con đường đất lúc bình minh vừa hé, hai bên là ruộng lúa còn ướt sương, thỉnh thoảng gặp một bác nông dân đang ra đồng, cười chào rất tự nhiên dù chẳng quen biết gì. Có buổi mình chọn đi bộ lúc chiều tà, ngắm hoàng hôn buông xuống trong từng bước chân, ánh nắng cuối ngày nhuộm vàng cả cánh đồng.
+
+Không khí ở quê có một thứ mà thành phố không bao giờ có được: sự trong lành đến mức mình phải hít thở sâu hơn bình thường, như thể phổi cũng cần thời gian để làm quen lại với không khí sạch.
+
+Chạy bộ ở quê cũng khác hẳn chạy trên máy hay chạy trong công viên thành phố. Không có tiếng còi xe, không có khói bụi, chỉ có tiếng gió, tiếng chim, và đôi lúc là tiếng mấy chú chó nhà ai sủa vu vơ rồi lại thôi.
+
+Giữa buổi, tấp vào một quán nước mía ven đường, uống một ly mát lạnh ép ngay tại chỗ. Hoặc ngồi bệt xuống cạnh gánh dừa của một cô bán hàng, chặt một trái dừa xiêm, húp một hơi cho đã khát. Những thức uống giản dị vậy thôi mà sao ở quê lại ngon đến lạ — có lẽ vì nó tươi thật, ép thật, không qua chai lọ hay công nghiệp gì cả.
+
+Người dân quê cũng vậy — chân chất theo đúng nghĩa. Không rào trước đón sau, không xã giao gượng gạo. Hỏi đường được chỉ tận tình, đôi khi còn được mời vào nhà ngồi uống nước, ăn thử trái cây trong vườn dù chẳng quen biết gì trước đó.
+
+Về quê với mình là công thức đơn giản để nạp lại năng lượng mỗi hai tuần: đạp xe, chạy bộ, ngắm hoàng hôn hoặc bình minh, ăn những món mình thích, uống nước dừa nước mía, và trò chuyện với những người xa lạ mà chân thành. Không có deadline, không có thông báo liên tục từ điện thoại — chỉ có tự do, trong lành, và một cơ thể khoẻ khoắn sau một buổi vận động.
+
+Đôi khi, hạnh phúc chỉ đơn giản vậy thôi.
+    `
+  },
 ];
