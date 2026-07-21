@@ -210,4 +210,33 @@ Mình không biết đây có phải là quyết định đúng cho tất cả m
 Nhưng với mình, lần này, ở lại hoá ra lại là bài học lớn nhất. Không phải vì mọi thứ trở nên hoàn hảo, mà vì mình phát hiện ra mình bền hơn mình tưởng.
     `
   },
+  {
+    title: "AI và tương lai ngành tài chính: góc nhìn từ người làm dữ liệu",
+    category: "learn",
+    date: "2026-07-04",
+    cover: "ai-finance.jpg",
+    content: `
+Cách đây vài năm, một buổi sáng làm báo cáo doanh số của mình thường bắt đầu bằng việc mở hàng chục file Excel, đối chiếu số liệu, và tự hỏi tại sao Pivot Table lại không refresh đúng như mình muốn.
+
+Giờ thì phần lớn việc đó đã có AI làm giúp. Không phải kiểu "robot thay thế con người" như phim viễn tưởng, mà cụ thể hơn nhiều: một công cụ hiểu được câu hỏi bằng ngôn ngữ tự nhiên, tự viết công thức, tự phát hiện điểm bất thường trong dữ liệu mà trước đây phải nhìn cả trăm dòng mới nhận ra.
+
+Ngành tài chính, theo mình, là một trong những ngành sẽ bị AI định hình lại rõ nét nhất — không phải vì tài chính "dễ" mà vì tài chính vốn dĩ là ngành của dữ liệu và mẫu hình. Mà dữ liệu và mẫu hình lại chính là thứ AI làm tốt nhất.
+
+**Vài điều mình thấy đang thay đổi rõ nhất:**
+
+Dự báo và lập kế hoạch không còn chỉ dựa vào số liệu lịch sử và trực giác của người lập kế hoạch. AI có thể xử lý hàng loạt biến số cùng lúc — mùa vụ, xu hướng thị trường, thậm chí cả tin tức — để đưa ra dự báo sát hơn nhiều so với công thức Excel truyền thống.
+
+Phát hiện gian lận và rủi ro giờ chạy theo thời gian thực. Một giao dịch bất thường có thể được gắn cờ trong tích tắc, thay vì được phát hiện sau một kỳ kiểm toán.
+
+Công việc phân tích, thứ trước đây chiếm phần lớn thời gian của một nhân viên tài chính — tổng hợp số liệu, làm báo cáo, đối chiếu dữ liệu — đang dần được AI đảm nhận. Điều đó không có nghĩa là vai trò con người biến mất, mà là dịch chuyển: từ người *thực hiện phép tính* sang người *đặt câu hỏi đúng* và *diễn giải ý nghĩa* đằng sau con số.
+
+Đây là điều mình nghĩ quan trọng nhất: AI giỏi xử lý dữ liệu, nhưng chưa thể thay thế phán đoán, đạo đức nghề nghiệp, hay khả năng chịu trách nhiệm cho một quyết định tài chính. Một mô hình có thể gợi ý, nhưng người ký tên vào quyết định vẫn phải là con người.
+
+Mình không nghĩ AI sẽ "cướp việc" theo nghĩa đơn giản. Mình nghĩ nó sẽ thay đổi định nghĩa của việc "làm tốt" trong ngành này. Người giỏi Excel nhất không còn là người thắng cuộc — người biết hỏi đúng câu hỏi, biết dùng công cụ để khuếch đại năng lực của mình, mới là người đi xa.
+
+Với mình, đó vừa là một áp lực, vừa là một cơ hội. Áp lực vì phải học liên tục để không bị bỏ lại. Cơ hội vì lần đầu tiên, một người không có nền tảng lập trình như mình vẫn có thể tự động hoá công việc, tự xây công cụ riêng, tự học những thứ mà trước đây chỉ dân kỹ thuật mới làm được.
+
+Tương lai ngành tài chính, mình đoán, sẽ không phải là "con người hay AI". Mà là con người biết dùng AI, và con người không biết dùng AI — và khoảng cách giữa hai nhóm đó sẽ ngày càng rõ.
+    `
+  },
 ];
